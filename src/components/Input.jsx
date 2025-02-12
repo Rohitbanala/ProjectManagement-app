@@ -1,4 +1,4 @@
-export default function Input({ title, isTextArea = false, ...props }) {
+export default function Input({ title, isTextArea = false, ref, ...props }) {
   const classes =
     "w-full p-1 border-b-2 rounded-sm border-stone-300 bg-stone-200 text-stone-600 focus:outline-none focus:border-stone-600";
   return (
@@ -7,9 +7,9 @@ export default function Input({ title, isTextArea = false, ...props }) {
         {title}
       </label>
       {isTextArea ? (
-        <textarea {...props} className={classes}></textarea>
+        <textarea ref={ref} {...props} className={classes}></textarea>
       ) : (
-        <input {...props} className={classes} />
+        <input ref={ref} {...props} className={classes} />
       )}
     </p>
   );
